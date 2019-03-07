@@ -18,13 +18,13 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
     @Override
     public PatientType nextPatient()
     {
-        return stackQueue.peekLast();
+        return stackQueue.peekFirst();
     }
 
     @Override
     public PatientType treatNextPatient()
     {
-        return stackQueue.removeLast();
+        return stackQueue.removeFirst();
     }
 
     @Override
