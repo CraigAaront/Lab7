@@ -12,43 +12,41 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
     @Override
     public void addPatient(PatientType patient)
     {
-        // TODO Auto-generated method stub
-        
+        stackQueue.addFirst(patient);   
     }
 
     @Override
     public PatientType nextPatient()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return stackQueue.peekLast();
     }
 
     @Override
     public PatientType treatNextPatient()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return stackQueue.removeLast();
     }
 
     @Override
     public int numPatients()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        return stackQueue.size();
     }
 
     @Override
     public String hospitalType()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return "StackHospital";
     }
 
     @Override
     public String allPatientInfo()
     {
-        // TODO Auto-generated method stub
-        return null;
+        String output = "";
+        for (int i = 0; i < stackQueue.size(); i++) {
+            output += ((LinkedList<PatientType>) stackQueue).get(i).toString();
+        }
+        return output;
     }
 
 }
