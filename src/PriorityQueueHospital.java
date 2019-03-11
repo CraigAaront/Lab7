@@ -39,7 +39,7 @@ public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
     @Override
     public String hospitalType()
     {
-        return "PriorityHospital";
+        return "PriorityQueueHospital";
     }
 
     @Override
