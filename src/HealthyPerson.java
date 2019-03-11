@@ -26,7 +26,7 @@ public class HealthyPerson extends Person
         }
     }
     private String getReason() {
-        return this.getReason();
+        return this.reason;
     }
 
     @Override

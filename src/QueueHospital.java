@@ -4,7 +4,6 @@ import java.util.LinkedList;
 
 public class QueueHospital<PatientType> extends Hospital<PatientType>
 {
-
     private Deque<PatientType> hospitalQueue;
     Iterator<PatientType> iterator;
     
@@ -47,8 +46,8 @@ public class QueueHospital<PatientType> extends Hospital<PatientType>
     public String allPatientInfo()
     {
         String output = "";
-        while (iterator.hasNext()) {
-            output += iterator.next();
+        for (iterator = hospitalQueue.iterator(); iterator.hasNext(); ) {
+            output += iterator.next().toString();
         }
         return output;
     }

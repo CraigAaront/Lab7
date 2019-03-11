@@ -46,8 +46,8 @@ public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
     public String allPatientInfo()
     {
         String output = "";
-        while (iterator.hasNext()) {
-            output += iterator.next();
+        for (iterator = priorityHospital.iterator(); iterator.hasNext(); ) {
+            output += iterator.next().toString();
         }
         return output;
     }

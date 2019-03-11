@@ -9,7 +9,6 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
     
     public StackHospital() {
         stackQueue = new LinkedList<PatientType>();
-        iterator = stackQueue.iterator();
     }
     
     @Override
@@ -46,8 +45,8 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
     public String allPatientInfo()
     {
         String output = "";
-        while (iterator.hasNext()) {
-            output += (iterator.next());
+        for (iterator = stackQueue.iterator(); iterator.hasNext(); ) {
+            output += iterator.next().toString();
         }
         return output;
     }
