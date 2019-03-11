@@ -5,7 +5,7 @@ import java.util.Iterator;
 public class StackHospital<PatientType> extends Hospital<PatientType>
 {
     private Deque<PatientType> stackQueue;
-    Iterator iterator;
+    Iterator<PatientType> iterator;
     
     public StackHospital() {
         stackQueue = new LinkedList<PatientType>();

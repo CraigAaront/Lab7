@@ -1,11 +1,15 @@
 import java.util.PriorityQueue;
+import java.util.Iterator;
 
 public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
 {
     
     PriorityQueue<PatientType> priorityHospital;
+    Iterator<PatientType> iterator;
+    
     public PriorityQueueHospital() {
         priorityHospital = new PriorityQueue<PatientType>();
+        iterator = priorityHospital.iterator();
     }
     
     @Override
@@ -42,8 +46,8 @@ public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
     public String allPatientInfo()
     {
         String output = "";
-        for (int i = 0; i < priorityHospital.size(); i++) {
-            output += priorityHospital.toString();
+        while (iterator.hasNext()) {
+            output += iterator.next();
         }
         return output;
     }
