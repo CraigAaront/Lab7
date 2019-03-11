@@ -5,11 +5,12 @@ public class HospitalTest
 {
     @Test
     public void testQueueHospital() {
-        Hospital queue = new QueueHospital();
+        Hospital<Person> queue = new QueueHospital<Person>();
         Person one = new SickPerson("one", 1, 1);
         Person two = new SickPerson("two", 2, 2);
         queue.addPatient(one);
         queue.addPatient(two);
+        
         
         Assert.assertEquals("nextPatient is incorrect", one, queue.nextPatient());
         Assert.assertEquals("treatNextPatient is incorrect", one, queue.treatNextPatient());
@@ -21,7 +22,7 @@ public class HospitalTest
     
     @Test
     public void testStackHospital() {
-        Hospital queue = new StackHospital();
+        Hospital<Person> queue = new StackHospital<Person>();
         Person one = new SickPerson("one", 1, 1);
         Person two = new SickPerson("two", 2, 2);
         queue.addPatient(one);
@@ -37,7 +38,7 @@ public class HospitalTest
     }
     @Test
     public void testPriorityHospital() {
-        Hospital queue = new PriorityQueueHospital();
+        Hospital<Person> queue = new PriorityQueueHospital<Person>();
         Person one = new SickPerson("one", 1, 1);
         Person two = new HealthyPerson("two", 2, "reason");
         queue.addPatient(one);
