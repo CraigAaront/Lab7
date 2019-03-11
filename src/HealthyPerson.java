@@ -1,30 +1,37 @@
 
 public class HealthyPerson extends Person
 {
-
-    public HealthyPerson(String name, int age)
+    private String reason;
+   
+    public HealthyPerson(String name, int age, String reason)
     {
         super(name, age);
+        this.reason = reason;
     }
 
     @Override
     protected int compareToImpl(Person p)
     {
-        if (this.getName().charAt(0) > p.getName().charAt(0)) {
+        if (!this.getClass().equals(p.getClass())) {
+            return 0;
+        }
+        else if (this.getName().compareTo(p.getName()) == 1) {
             return 1;
         }
-        else if (this.getName().charAt(0) < p.getName().charAt(0)) {
+        else if (this.getName().compareTo(p.getName()) == -1) {
             return -1;
         }
         else {
             return 0;
         }
     }
-        
+    private String getReason() {
+        return this.getReason();
+    }
 
     @Override
     public String toString()
     {
-        return "HealthyPerson";
+        return String.format("%s In for %s", super.toString(), this.getReason());
     }
 }

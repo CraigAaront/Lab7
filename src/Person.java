@@ -8,8 +8,8 @@ public abstract class Person implements Comparable<Person>
 {
 	// Note: private variables should be documented, but don't require Javadoc.
 	private String name;
-
 	private int age;
+
 
 	/**
 	 * Stores the name and age of the Person.
@@ -22,6 +22,7 @@ public abstract class Person implements Comparable<Person>
 		this.name = name;
 		this.age = age;
 	}
+	
 
 	/**
 	 * Get Person's name.
