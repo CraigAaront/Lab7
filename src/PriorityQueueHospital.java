@@ -1,4 +1,3 @@
-import java.util.LinkedList;
 import java.util.PriorityQueue;
 
 public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
@@ -12,43 +11,41 @@ public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
     @Override
     public void addPatient(PatientType patient)
     {
-        // TODO Auto-generated method stub
-        
+        priorityHospital.add(patient);
     }
 
     @Override
     public PatientType nextPatient()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return priorityHospital.peek();
     }
 
     @Override
     public PatientType treatNextPatient()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return priorityHospital.poll();
     }
 
     @Override
     public int numPatients()
     {
-        // TODO Auto-generated method stub
-        return 0;
+        return priorityHospital.size();
     }
 
     @Override
     public String hospitalType()
     {
-        // TODO Auto-generated method stub
-        return null;
+        return "PriorityHospital";
     }
 
     @Override
     public String allPatientInfo()
     {
-        // TODO Auto-generated method stub
-        return null;
+        String output = "";
+        for (int i = 0; i < priorityHospital.size(); i++) {
+            output += priorityHospital.toString();
+        }
+        return output;
     }
 
 }

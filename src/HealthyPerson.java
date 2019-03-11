@@ -5,21 +5,26 @@ public class HealthyPerson extends Person
     public HealthyPerson(String name, int age)
     {
         super(name, age);
-        // TODO Auto-generated constructor stub
     }
 
     @Override
     protected int compareToImpl(Person p)
     {
-        // TODO Auto-generated method stub
-        return 0;
+        if (this.getName().charAt(0) > p.getName().charAt(0)) {
+            return 1;
+        }
+        else if (this.getName().charAt(0) < p.getName().charAt(0)) {
+            return -1;
+        }
+        else {
+            return 0;
+        }
     }
+        
 
     @Override
     public String toString()
     {
-        return "HealthyPerson []";
+        return "HealthyPerson";
     }
-    
-    
 }
