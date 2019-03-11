@@ -1,12 +1,15 @@
 import java.util.Deque;
 import java.util.LinkedList;
+import java.util.Iterator;
 
 public class StackHospital<PatientType> extends Hospital<PatientType>
 {
     private Deque<PatientType> stackQueue;
+    Iterator iterator;
     
     public StackHospital() {
         stackQueue = new LinkedList<PatientType>();
+        iterator = stackQueue.iterator();
     }
     
     @Override
@@ -43,8 +46,8 @@ public class StackHospital<PatientType> extends Hospital<PatientType>
     public String allPatientInfo()
     {
         String output = "";
-        for (int i = 0; i < stackQueue.size(); i++) {
-            output += ((LinkedList<PatientType>) stackQueue).get(i).toString();
+        while (iterator.hasNext()) {
+            output += (iterator.next());
         }
         return output;
     }

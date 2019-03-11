@@ -1,16 +1,17 @@
 
 public class SickPerson extends Person
 {
-
-    public SickPerson(String name, int age)
+    private int severity;
+    public SickPerson(String name, int age, int severity)
     {
         super(name, age);
+        this.severity = severity;
     }
 
     @Override
     protected int compareToImpl(Person p)
     {
-        
+        if ()
         return 0;
     }
 
