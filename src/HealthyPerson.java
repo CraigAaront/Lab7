@@ -15,15 +15,8 @@ public class HealthyPerson extends Person
         if (!this.getClass().equals(p.getClass())) {
             return 0;
         }
-        else if (this.getName().compareTo(p.getName()) == 1) {
-            return 1;
-        }
-        else if (this.getName().compareTo(p.getName()) == -1) {
-            return -1;
-        }
-        else {
-            return 0;
-        }
+
+            return this.getName().compareTo(p.getName());
     }
     private String getReason() {
         return this.reason;
