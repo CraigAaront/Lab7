@@ -7,7 +7,7 @@ import java.util.Iterator;
  * PriorityQueueHospital class orders by the natural ordering of the patientType
  * @param <PatientType>
  */
-public class PriorityQueueHospital<PatientType> extends Hospital<PatientType>
+public class PriorityQueueHospital<PatientType extends Comparable<PatientType>> extends Hospital<PatientType>
 {
     /**
      * Initializes an interator and hospital
